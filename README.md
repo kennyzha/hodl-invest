@@ -1,5 +1,5 @@
 # hodl-invest
-**hodl-invest serve API**
+**hodl-invest server API documentation**
 https://hodl-invest-server.herokuapp.com/
 ----
 
@@ -63,6 +63,34 @@ xhr.setRequestHeader("postman-token", "892b1a54-83a8-7bf4-082c-6dce55be2147");
 xhr.send(data);
 ```  
   
+* **https://hodl-invest-server.herokuapp.com/api/v1/users/{username}/transactions/{amount}**
+
+
+* **Method:**
+
+  `POST`
+  
+*  **URL Params**
+
+   **Required:** N/A
+ 
+
+   **Optional:** N/A
+ 
+
+* **Method:**
+  
+
+  `POST`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `username=[string]`
+   `playMoney=[integer]`
+
+   **Optional:**
 
 * **Notes:**
 
