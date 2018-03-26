@@ -1,36 +1,70 @@
 # hodl-invest
+**hodl-invest serve API**
+https://hodl-invest-server.herokuapp.com/
+----
 
-Description:  
-Hodl Invest is a Mutual Fund with Algorithmic Trading for Cryptocurrencies.    
-Minimum Viable Product:      
-Investors would be able to create an account on the website and invest their money and in return get shares of the mutual fund. Investors would be able to check the current portfolio allocations amongst various fund manager approved cryptocurrencies, but would be unable to individually change the portfolio allocations. Trading would be done algorithmically based on fund manager approved parameters.          
-Add Ons:     
-Investors would be able to withdrawal from the mutual fund.     
-Investors would be able to choose amongst different portfolios.        
-Investors would be able to refer other investors and get referral fees.     
+* **https://hodl-invest-server.herokuapp.com/api/v1/users/**
 
 
-User Stories:  
-As a user, I want to create an account and be able to login with that account.  
-As a user, I want to be able to transfer funds to purchase shares of the mutual fund.  
-As a user, I want to be able to check the current portfolio allocations amongst various cryptocurrencies.  
-As an administrator, I want to store sensitive user account information.  
-As an administrator, I want to interface with various cryptocurrency exchanges.  
-As an administrator, I want to be able to change the trading parameters.  
+* **Method:**
+  
+
+  `GET`
+  
+*  **URL Params**
+
+   **Required:** N/A
+ 
+
+   **Optional:** N/A
+ 
+
+* **Method:**
+  
+
+  `POST`
+  
+*  **URL Params**
+
+   **Required:**
+ 
+   `username=[string]`
+   `password=[string]`
+   `name=[string]`
+   `email=[string]`
+   `playMoney=[integer]`
+
+   **Optional:**
 
 
-Core Team:  
-Wei Cheng (Richard) Guo - Product Manager/Full Stack Developer:  
-Provide requirements and develop user login and portfolio allocations page.  
-Alex Wu - Full Stack Developer:  
-Develop and maintain databases and security for sensitive user information.  
-Kenny Zhao - Full Stack Developer:  
-Develop trading parameters and interfacing with various cryptocurrency exchanges. 
+* **Sample Call:**
+```
+var data = JSON.stringify({
+  "username": "zoro1",
+  "name": "bobby",
+  "email": "testemail@email.com",
+  "playMoney": 1500
+});
 
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
-Auxiliary Team:  
-Vincent Cheng:  
-Winston Mills:    
-Pong Cheecharern:     
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "https://hodl-invest-server.herokuapp.com/api/v1/users/");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "892b1a54-83a8-7bf4-082c-6dce55be2147");
+
+xhr.send(data);
+```  
+  
+
+* **Notes:**
+
 
 [![Gitter chat](https://badges.gitter.im/MutualFund/Lobby.png)](https://gitter.im/MutualFund/Lobby)
