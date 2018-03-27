@@ -6,6 +6,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Login from './components/Login'
 import NavigationBar from './components/NavigationBar'
+import Transaction from './components/Transaction'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
       <Router>
         <div>
           <NavigationBar />
+            <Transaction/>
           <Route exact path ="/" component={Home} />
           <Route path ="/login" component={Login} />
           <Route path ="/about" component={About} />
