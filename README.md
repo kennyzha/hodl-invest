@@ -16,7 +16,9 @@ https://hodl-invest-server.herokuapp.com/
  
 
    **Optional:** N/A
- 
+   
+ * **Sample Call:**
+
  ```
  var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
@@ -183,13 +185,37 @@ xhr.send(data);
 
 * **Method:**
   
-  `GET`
+  `POST`
   
 *  **URL Params**
 
    **Required:**
 
    **Optional:**
+   
+* **Sample Call:**
+
+```
+var data = JSON.stringify({
+  "ticker": "abc",
+  "price": 22
+});
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "https://hodl-invest-server.herokuapp.com/api/v1/users/zoro/transactions");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
+```
 
 * **Notes:**
 
