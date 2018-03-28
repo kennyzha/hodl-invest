@@ -36,6 +36,23 @@ xhr.setRequestHeader("cache-control", "no-cache");
 xhr.send(data);
  ```
 
+**Returns JSON**
+```
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "https://hodl-invest-server.herokuapp.com/api/v1/users");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
+```
 * **Method:**
 
   `POST`
@@ -163,7 +180,7 @@ xhr.send(data);
    **Optional:**
 
     **Returns JSON**
-    ```
+```
      [
     {
         "cryptocoin": {
@@ -179,8 +196,8 @@ xhr.send(data);
         },
         "timestamp": "2018-03-28T04:28:13.756"
     }
-]
-    ```
+  ]
+```
 * **Notes:**
 
 * **Method:**
