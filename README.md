@@ -111,13 +111,6 @@ xhr.send(data);
 * **Sample Call:**
 
 ```
-var data = JSON.stringify({
-  "username": "zoro1",
-  "name": "bobby",
-  "email": "testemail@email.com",
-  "playMoney": 1500
-});
-
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
@@ -207,7 +200,8 @@ xhr.send(data);
 *  **URL Params**
 
    **Required:**
-
+    `ticker=[string]`
+   `price=[double]`
    **Optional:**
    
 * **Sample Call:**
