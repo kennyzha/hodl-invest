@@ -15,9 +15,6 @@ class App extends Component {
         <div>
           <NavigationBar />
             <Transaction/>
-          <Route exact path ="/" component={Home} />
-          <Route path ="/login" component={Login} />
-          <Route path ="/about" component={About} />
         </div>
       </Router>
     );
